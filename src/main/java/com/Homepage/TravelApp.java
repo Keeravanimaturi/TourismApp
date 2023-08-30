@@ -49,17 +49,17 @@ public class TravelApp {
 
         System.out.print("Enter distance (in km): ");
         double distance = scanner.nextDouble();
-        int pr=6;
+        int pr=7;
         double packagePrice = calculatePrice(distance,pr);
-
+        double oneway=calculatePrice(distance,pr)/2;
         // Create transportation instances
-        ByBus bus = new ByBus(source, destination, dateTime, packagePrice);
-         pr=4;
+        ByBus bus = new ByBus(source, destination, dateTime, packagePrice,oneway);
+         pr=6;
          packagePrice = calculatePrice(distance,pr);
-        ByTrain train = new ByTrain(source, destination, dateTime, packagePrice);
+        ByTrain train = new ByTrain(source, destination, dateTime, packagePrice,oneway);
         pr=9;
         packagePrice = calculatePrice(distance,pr);
-        ByPlane plane = new ByPlane(source, destination, dateTime, packagePrice);
+        ByPlane plane = new ByPlane(source, destination, dateTime, packagePrice,oneway);
 
         // Loop for menu options
         while (true) {

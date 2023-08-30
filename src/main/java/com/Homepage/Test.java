@@ -5,13 +5,15 @@ import java.util.Scanner;
 public class Test {
 	 public static void main(String[] args) {
 	    Excel ex = new Excel();
-	        ex.readData();
+	       // ex.readData();
 	        Login log=new Login();
 	        TravelApp t=new TravelApp();
-	        // System.out.println("enter phone number");
-			log.verify();
+	       
 	       try (// Menu for accessing customer and account info
 	    	        Scanner scanner = new Scanner(System.in)) {
+	    	   System.out.println("enter phone number");
+	    	   long no=scanner.nextLong();
+				log.verify();
 	    	            while (true) {
 	    	                System.out.println("Menu:");
 	    	                System.out.println("1. Transport");
@@ -29,7 +31,7 @@ public class Test {
 	    	                   t.search();
 	    	                }
 	    	                else if (choice == 2) {
-	    	                	   
+	    	                	   t.packages();
 	    	                }
 	    	                else if (choice == 3) {
 	    	                	t.rating();  
